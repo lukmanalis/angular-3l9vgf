@@ -1,0 +1,17 @@
+<h1>child component</h1>
+
+<div>{{ myData }}</div>
+<div>Parent Data Received : {{ parentDataReceived }}</div>
+
+<div><button (click)="passData()">pass Data to parent</button></div>
+
+<div>
+  Sending Data to Parent :
+  <input
+    type="text"
+    [(ngModel)]="sendDataToParent"
+    (keypress)="onKeypressEvent($event)"
+  />
+</div>
+
+<div>Data send to Parent : {{ sendDataToParent }}</div>

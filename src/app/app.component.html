@@ -1,0 +1,21 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<h1>Parent component</h1>
+
+Child Wish Data Received : {{ childWishData }}
+
+<div>
+  Send to Child : <input type="text" [(ngModel)]="sendDataToChild" /> <br />
+  Data Send to Child : {{ sendDataToChild }}
+</div>
+
+<div>Child Data Received : {{ childDataReceived }}</div>
+<hr />
+
+<app-child-comp
+  (myEvent)="setChildData($event)"
+  [myData]="morningWishes"
+  [parentDataReceived]="sendDataToChild"
+  (sendDataToParentEvent)="receiveChildData($event)"
+></app-child-comp>
